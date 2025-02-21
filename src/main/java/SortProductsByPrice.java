@@ -24,6 +24,7 @@ public class SortProductsByPrice {
             System.out.println("Invalid choice.");
             return;
         }
+        
         System.out.println("Products Sorted by Price:");
         for (Product product : products) {
             System.out.println(product.display());
