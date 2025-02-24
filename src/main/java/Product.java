@@ -1,12 +1,14 @@
 public class Product {
     private int id;
     private String name;
+    private String category;
     private int quantity;
     private double price;
 
-    public Product(int id, String name, int quantity, double price) {
+    public Product(int id, String name, String category, int quantity, double price) {
         this.id = id;
         this.name = name;
+        this.category = category;
         this.quantity = quantity;
         this.price = price;
     }
@@ -17,6 +19,10 @@ public class Product {
 
     public String getName() {
         return name;
+    }
+
+    public String getCategory() {
+        return category;
     }
 
     public int getQuantity() {
@@ -33,20 +39,22 @@ public class Product {
 
     @Override
     public String toString() {
-        return id + "," + name + "," + quantity + "," + price;
+        return id + "," + name + "," + category + "," + quantity + "," + price;
     }
+
 
     public static Product fromString(String data) {
         String[] parts = data.split(",");
         return new Product(
                 Integer.parseInt(parts[0]),
                 parts[1],
-                Integer.parseInt(parts[2]),
-                Double.parseDouble(parts[3])
+                parts[2],
+                Integer.parseInt(parts[3]),
+                Double.parseDouble(parts[4])
         );
     }
 
     public String display() {
-        return "ID: " + id + ", Name: " + name + ", Quantity: " + quantity + ", Price: " + price;
+        return "ID: " + id + ", Name: " + name + ", Category: " + category + ", Quantity: " + quantity + ", Price: " + price;
     }
 }

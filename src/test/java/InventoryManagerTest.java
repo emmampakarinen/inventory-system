@@ -9,7 +9,7 @@ public class InventoryManagerTest {
 
     @BeforeEach
     public void initTest() {
-        Product product = new Product(101, "Laptop", 10, 70);
+        Product product = new Product(101, "Laptop", "Electronics", 10, 70);
         manager.addProduct(product);
     }
 
@@ -36,7 +36,7 @@ public class InventoryManagerTest {
     // 3rd unit test for Product. Testing to fetch price 
     @Test
     void testProductGetPrice() {
-        Product product = new Product(102, "Bottle", 10, 7);
+        Product product = new Product(102, "Bottle", "Utilities", 10, 7);
         double price = product.getPrice();
         assertEquals(7.0, price);
     }

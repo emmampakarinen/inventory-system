@@ -19,7 +19,8 @@ public class Main {
             System.out.println("9. Check Low Stock Products");
             System.out.println("10. Filter Products by Price Range");
             System.out.println("11. Clear Inventory");
-            System.out.println("12. Save and Exit");
+            System.out.println("12. Search products by category");
+            System.out.println("0. Save and Exit");
             System.out.print("Choose an option: ");
             int choice = scanner.nextInt();
 
@@ -35,7 +36,8 @@ public class Main {
                 case 9 -> new CheckLowStock(inventoryManager).execute();
                 case 10 -> new FilterByPriceRange(inventoryManager).execute();
                 case 11 -> new ClearInventory(inventoryManager).execute();
-                case 12 -> {
+                case 12 -> new FilterByCategory(inventoryManager).execute();
+                case 0 -> {
                     inventoryManager.saveInventory();
                     System.out.println("Inventory saved. Goodbye!");
                     return;

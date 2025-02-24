@@ -19,10 +19,10 @@ public class ViewProductsAndCleanInventoryTest {
         // initizalizing and clearing InventoryManager with test products
         manager = new InventoryManager();
         manager.clearInventory();
-        manager.addProduct(new Product(1, "Laptop", 70, 100));
-        manager.addProduct(new Product(2, "Mouse", 50, 30));
-        manager.addProduct(new Product(3, "Mouse mat", 6, 5));
-        manager.addProduct(new Product(4, "Charger", 9, 10));
+        manager.addProduct(new Product(1, "Laptop", "Electronics", 70, 100));
+        manager.addProduct(new Product(2, "Mouse","Electronics", 50, 30));
+        manager.addProduct(new Product(3, "Mouse mat","Electronics", 6, 5));
+        manager.addProduct(new Product(4, "Charger","Electronics", 9, 10));
 
         viewProducts = new ViewProducts(manager);
         checkLowStock = new CheckLowStock(manager);
@@ -33,7 +33,7 @@ public class ViewProductsAndCleanInventoryTest {
     void testExecuteWithProducts() {
         viewProducts.execute();
 
-        String expectedOutput = "Inventory:\nID: 1, Name: Laptop, Quantity: 70, Price: 100.0\nID: 2, Name: Mouse, Quantity: 50, Price: 30.0\nID: 3, Name: Mouse mat, Quantity: 6, Price: 5.0\nID: 4, Name: Charger, Quantity: 9, Price: 10.0\n";
+        String expectedOutput = "Inventory:\nID: 1, Name: Laptop, Category: Electronics, Quantity: 70, Price: 100.0\nID: 2, Name: Mouse, Category: Electronics, Quantity: 50, Price: 30.0\nID: 3, Name: Mouse mat, Category: Electronics, Quantity: 6, Price: 5.0\nID: 4, Name: Charger, Category: Electronics, Quantity: 9, Price: 10.0\n";
 
         // asser output matches expected string which has been modified to remove extra white space
         assertEquals(expectedOutput.replaceAll("\\s+", " ").trim(),
@@ -45,7 +45,7 @@ public class ViewProductsAndCleanInventoryTest {
         void testCheckLowStock() {
             checkLowStock.execute();
     
-            String expectedOutput = "Low Stock Products (Quantity < 10):\nID: 3, Name: Mouse mat, Quantity: 6, Price: 5.0\nID: 4, Name: Charger, Quantity: 9, Price: 10.0\n";
+            String expectedOutput = "Low Stock Products (Quantity < 10):\nID: 3, Name: Mouse mat, Category: Electronics, Quantity: 6, Price: 5.0\nID: 4, Name: Charger, Category: Electronics, Quantity: 9, Price: 10.0\n";
     
             // asser output matches expected string which has been modified to remove extra white space
             assertEquals(expectedOutput.replaceAll("\\s+", " ").trim(),

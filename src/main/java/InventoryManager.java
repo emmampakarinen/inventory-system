@@ -43,6 +43,28 @@ public class InventoryManager {
         return null;
     }
 
+    public List<String> getCategories() {
+        List<String> categoriesAvailable = new ArrayList<>();
+
+        for (Product product : inventory) {
+            if (categoriesAvailable.contains(product.getCategory()) == false) {
+                categoriesAvailable.add(product.getCategory());
+            };
+        }
+
+        return categoriesAvailable;
+    }
+
+    public List<Product> findProductsByCategory(String category) {
+        List<Product> productsByCategory = new ArrayList<>();
+        for (Product product : inventory) {
+            if (product.getCategory().equals(category)) {
+                productsByCategory.add(product);
+            };
+        }
+        return productsByCategory;
+    }
+
     public void removeProduct(int id) {
         inventory.removeIf(product -> product.getId() == id);
     }
