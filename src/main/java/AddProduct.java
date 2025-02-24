@@ -9,9 +9,8 @@ public class AddProduct {
 
     public void execute() {
         Scanner scanner = new Scanner(System.in);
-        System.out.print("Enter Product ID: ");
-        int id = scanner.nextInt();
-        scanner.nextLine();
+        
+        int id = inventoryManager.getNewProductID();
         System.out.print("Enter Product Name: ");
         String name = scanner.nextLine();
         System.out.print("Enter Product Category: ");

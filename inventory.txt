@@ -1,5 +1,7 @@
-1,Laptop,Electronics,10,100.0
-2,Phone,Electronics,70,90.0
-3,Water Bottle,Other,40,10.0
-4,Potato chips,Snacks,7,3.0
-5,Chocolate Bar,Snacks,9,2.0
+0,Laptop,Electronics,20,200.0
+1,Keyboard,Electronics,19,50.0
+2,Chips,Snacks,49,5.0
+3,Screen,Electronics,7,80.0
+4,Dishwasher,Home electronics,30,103.0
+5,TV,Entertainment,27,355.0
+6,PlayStation 5,Entertainment,7,500.0

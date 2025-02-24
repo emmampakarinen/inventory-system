@@ -72,4 +72,8 @@ public class InventoryManager {
     public void clearInventory() {
         inventory.clear();
     }
+
+    public int getNewProductID() {
+        return inventory.size();
+    }
 }

@@ -12,6 +12,13 @@ public class FilterByCategory {
     public void execute() {
         List<String> categories = new ArrayList<>();
         categories = inventoryManager.getCategories();
+        System.out.println("");
+        if (categories.size() == 0) {
+            System.out.println("No categories!");
+            return;
+        }
+
+        System.out.println("Available categories:");
         int j = 1;
         for (int i = 0; i < categories.size(); i++) {
             System.out.println(j + ") " + categories.get(i));
